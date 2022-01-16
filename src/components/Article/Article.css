@@ -126,7 +126,7 @@
     display: flex;
     font-size: 13px;
     font-weight: 600;
-    justify-content: end;
+    justify-content: flex-end;
     letter-spacing: 1px;
     margin-left: -400px;
     outline: none;
