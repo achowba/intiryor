@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
-import gsap, { Power0, Power1, Power2, Power3, Power4 } from 'gsap';
+import gsap, { Power3, Power4 } from 'gsap';
 
 
 import './Article.css';
@@ -15,9 +15,9 @@ const Article = () => {
     const tl = gsap.timeline({ defaults: { duration: 1 } });
 
     // use useRef hooks to select html elements
-    let app = useRef(null);
+    // let app = useRef(null);
     let articleImageRef = useRef(null);
-    let articleTitleRef = useRef(null);
+    // let articleTitleRef = useRef(null);
 
     useEffect(() => {
         const articleImage = articleImageRef;
@@ -30,7 +30,7 @@ const Article = () => {
     }, [tl]);
 
     return (
-        <div className="article-wrapper" ref={el => app = el}>
+        <div className="article-wrapper">
             <div className="article-category">
                 <p>Category</p>
             </div>
