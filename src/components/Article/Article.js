@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react';
-import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 import gsap, { Power3, Power4 } from 'gsap';
-
+import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 
 import './Article.css';
 
@@ -15,23 +14,28 @@ const Article = () => {
     const tl = gsap.timeline({ defaults: { duration: 1 } });
 
     // use useRef hooks to select html elements
-    // let app = useRef(null);
+    let btnReadMoreRef = useRef(null);
+    let articleDateRef = useRef(null);
+    let articlePointRef = useRef(null);
     let articleImageRef = useRef(null);
-    // let articleTitleRef = useRef(null);
+    let articleAuthorRef = useRef(null);
+    let articleCategoryRef = useRef(null);
 
     useEffect(() => {
-        const articleImage = articleImageRef;
         const articleTitleOverlay = CSSRulePlugin.getRule(`.article-title > span::before`);
 
-        tl.from(articleImage, { duration: 1, y: '100vh', ease: Power4.easeInOut }, 'start')
-            .from(articleImage.firstElementChild, { duration: 1, scale: 1.1, ease: Power3.easeOut }, .2)
-            .to(articleTitleOverlay, { duration: 1.5, cssRule: { scaleY: 0 } }, .5)
+        tl.from(articleImageRef, { duration: 1, y: '100vh', ease: Power4.easeInOut }, 'start')
+            .from(articleImageRef.firstElementChild, { duration: 1, scale: 1.1, ease: Power3.easeOut }, 0.2)
+            .to(articleTitleOverlay, { duration: 2, cssRule: { scaleY: 0 } }, 0.4)
+            .from([...articlePointRef.children, ...articleDateRef.children], { duration: 0.8, y: 20, opacity: 0, ease: Power3.easeOut }, 0.6)
+            .from([btnReadMoreRef, articleCategoryRef], { duration: 0.8, y: 500, ease: Power3.easeOut }, 0.4)
+            .from(articleAuthorRef, { duration: 0.8, scale: 0, ease: Power3.easeOut }, 0.4)
 
     }, [tl]);
 
     return (
         <div className="article-wrapper">
-            <div className="article-category">
+            <div className="article-category" ref={el => articleCategoryRef = el}>
                 <p>Category</p>
             </div>
             <div className="article">
@@ -39,8 +43,8 @@ const Article = () => {
                     <img src={imgHome} alt="House" />
                 </div>
                 <div className="article-text">
-                    <img className="article-author" src="https://thispersondoesnotexist.com/image" alt="Author" />
-                    <div className="article-date">
+                    <img className="article-author" src="https://thispersondoesnotexist.com/image" alt="Author" ref={el => articleAuthorRef = el} />
+                    <div className="article-date" ref={el => articleDateRef = el}>
                         <p>20 January 2021</p>
                         <span></span>
                         <p>Blog</p>
@@ -49,7 +53,7 @@ const Article = () => {
                         <span>We create a dream</span> <br />
                         <span>beautiful home</span>
                     </h1>
-                    <div className="article-points">
+                    <div className="article-points" ref={el => articlePointRef = el}>
                         <div className="article-point">
                             <h4>Experience</h4>
                             <p>
@@ -69,7 +73,7 @@ const Article = () => {
                             </p>
                         </div>
                     </div>
-                    <button className="btn-read-more">
+                    <button className="btn-read-more" ref={el => btnReadMoreRef = el}>
                         READ MORE
                         <img src={iconArrow} alt="Arrow Right" />
                     </button>

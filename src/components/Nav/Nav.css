@@ -5,6 +5,15 @@
     justify-content: space-between;
 }
 
+.nav-wrapper::before {
+    background: #ffffff;
+    content: '';
+    height: 65px;
+    position: absolute;
+    transform-origin: 100% 0;
+    width: 100%;
+}
+
 .brand>img {
     cursor: pointer;
     width: 40px;
