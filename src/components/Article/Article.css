@@ -1,0 +1,140 @@
+.article-wrapper {
+    display: grid;
+    gap: 80px;
+    grid-template-columns: 10px 1fr;
+    /* visibility: hidden; */
+}
+
+.article-category {
+    align-self: center;
+    display: flex;
+    justify-self: end;
+    transform: rotate(-90deg);
+    transform-origin: top;
+}
+
+.article-category>p {
+    color: #6e6e6e;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.article-category>p::after {
+    background: #717171;
+    content: '';
+    height: 2px;
+    margin: 10px;
+    position: absolute;
+    width: 75px;
+}
+
+.article {
+    display: grid;
+    gap: 90px;
+    grid-template-columns: repeat(2, 1fr);
+    height: calc(100vh);
+}
+
+/* .article-image {
+    background: url('../../assets/img/home.jpg');
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+} */
+
+.article-image > img {
+    height: 100vh;
+    background-color: white;
+    width: 100%;
+}
+
+.article-text {
+    padding-top: 50px;
+    z-index: 9;
+}
+
+.article-author {
+    border-radius: 50%;
+    height: 50px;
+    margin-bottom: 30px;
+    width: 50px;
+}
+
+.article-date {
+    align-items: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.article-date>p {
+    color: #c0c0c0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.article-date>span {
+    background: #a94b26;
+    border-radius: 50%;
+    height: 4px;
+    margin: 0 12px;
+    width: 4px;
+}
+
+.article-title {
+    color: #333333;
+    font-size: 2.5rem;
+    margin: 0 0 20px 0;
+}
+
+.article-title>span::before {
+    background-color: #ffffff;
+    content: '';
+    height: 60px;
+    position: absolute;
+    transform-origin: 100% 0;
+    width: 25%;
+}
+
+.article-points {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 60px;
+}
+
+.article-point>h4 {
+    color: #c34d23;
+    margin: 0 0 18px 0;
+}
+
+.article-point>p {
+    color: #a0a0a0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+}
+
+.btn-read-more {
+    align-items: center;
+    background: #a94b26;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    font-size: 13px;
+    font-weight: 600;
+    justify-content: end;
+    letter-spacing: 1px;
+    margin-left: -400px;
+    outline: none;
+    padding: 30px 80px 30px 60px;
+    text-align: right;
+    width: 100%;
+}
+
+.btn-read-more>img {
+    margin-left: 20px;
+}
