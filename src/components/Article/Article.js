@@ -45,7 +45,7 @@ const Article = () => {
                         <span></span>
                         <p>Blog</p>
                     </div>
-                    <h1 className="article-title" ref={el => articleTitleRef = el}>
+                    <h1 className="article-title">
                         <span>We create a dream</span> <br />
                         <span>beautiful home</span>
                     </h1>
