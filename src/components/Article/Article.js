@@ -24,9 +24,9 @@ const Article = () => {
     useEffect(() => {
         const articleTitleOverlay = CSSRulePlugin.getRule(`.article-title > span::before`);
 
-        tl.from(articleImageRef, { duration: 1, y: '100vh', ease: Power4.easeInOut }, 'start')
+        tl.from(articleImageRef, { duration: 2, y: '100vh', ease: Power4.easeInOut })
             .from(articleImageRef.firstElementChild, { duration: 1, scale: 1.1, ease: Power3.easeOut }, 0.2)
-            .to(articleTitleOverlay, { duration: 2, cssRule: { scaleY: 0 } }, 0.4)
+            .to(articleTitleOverlay, { duration: 2.5, cssRule: { scaleY: 0 } }, 0.4)
             .from([...articlePointRef.children, ...articleDateRef.children], { duration: 0.8, y: 20, opacity: 0, ease: Power3.easeOut }, 0.6)
             .from([btnReadMoreRef, articleCategoryRef], { duration: 0.8, y: 500, ease: Power3.easeOut }, 0.4)
             .from(articleAuthorRef, { duration: 0.8, scale: 0, ease: Power3.easeOut }, 0.4)
