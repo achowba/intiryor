@@ -43,7 +43,7 @@ const Article = () => {
                     <img src={imgHome} alt="House" />
                 </div>
                 <div className="article-text">
-                    <img className="article-author" src="https://thispersondoesnotexist.com/image" alt="Author" ref={el => articleAuthorRef = el} />
+                    <img className="article-author" src="https://thispersondoesnotexist.com" alt="Author" ref={el => articleAuthorRef = el} />
                     <div className="article-date" ref={el => articleDateRef = el}>
                         <p>20 January 2021</p>
                         <span></span>
